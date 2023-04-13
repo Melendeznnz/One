@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<h1><big>PROGRAMA8</big></h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br><hr><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write("<big>" + frase + "</big>");
+		saltoLinea();
+
+	}
+	//Respuesta a paso 4: De faltar la palabra "function" o los paréntesis de apertura o cierre en alguna de las dos funciones, nada se mostraría por parte de JavaScript, porque si algo falla en la primer función repercutirá en la segunda que depende de ella, mientas que si algo falla en la segunda función, nada se mostrara en pantalla, porque de esta función depende la escritura de los datos en el HTML
+	var anho = 2025;
+	imprimir("Juan tiene: " + (anho - 2000) + " años");
+	imprimir("Pedro tiene: " + (anho - 1995) + " años");
+	anho = 2030;
+	imprimir("Carlos tiene: " + (anho - 2005) + " años");
+
+</script>

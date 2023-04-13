@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1>Juego del sorteo</h1>
+<br>
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function sorteo(n) {		
+
+		return parseInt((Math.random()) * n);
+
+	}
+
+	var maxSorteo = parseInt(prompt("De 0 hasta que número desea su sorteo"));
+	var numeroDelUsuario = parseInt(prompt("Adivine el número del 0 al " + maxSorteo));
+	var numeroDelSorteo = sorteo(maxSorteo);
+
+	if (numeroDelUsuario == numeroDelSorteo) {
+		imprimir("<h1>You win</h1>");
+	} else {
+		if (numeroDelUsuario < numeroDelSorteo) {
+			imprimir("Era un número más grande");
+		} else {
+			imprimir("Era un número más pequeño");
+		}
+		imprimir("Intente nuevamente");
+	}
+	
+</script>

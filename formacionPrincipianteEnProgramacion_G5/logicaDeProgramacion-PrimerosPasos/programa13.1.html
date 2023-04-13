@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<body>
+
+<h1>Juego de adivinanzas 2.1</h1>
+
+<input />
+<button >Verificar si acertó el número</button>
+
+</body>
+
+<script>
+
+	var userInput = document.querySelector("input");
+		userInput.focus();
+
+	function verificar() {
+
+		var numeroSecreto = ["1", "4", "6" ,"9"];
+		var correcto = false;
+
+		for (var posicion = 0; posicion < 4; posicion++) {
+			correcto = (userInput.value == numeroSecreto [posicion])
+			if (correcto == true) {
+				break;
+			}
+		}
+
+		if (correcto) {
+			alert("Usted a acertado 👏🏻👏🏻👏🏻");
+		}
+		else {
+			alert("Usted a fallado, vuelva a intentar");
+		}
+
+		userInput.value = "";
+		userInput.focus();
+
+	}
+
+	var button = document.querySelector("button");
+
+	button.onclick = verificar;
+
+</script>

@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA2IMC</h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function calcularIMC(peso, altura) {
+
+		return(peso / (altura * altura));
+
+	}
+
+	var nombre = prompt("Informe su nombre");
+	var pesoInformado = prompt("Informe su peso");
+	var alturaInformada = prompt("Informe su altura");
+
+	var imcCalculado = calcularIMC(pesoInformado, alturaInformada);
+
+	saltoLinea();
+	imprimir(nombre + ", su IMC calculado es: " + imcCalculado);
+	saltoLinea();
+
+	if (18.5 > imcCalculado) {
+		if (0 > imcCalculado) {
+			imprimir(nombre + ", su masa es negativa, usted está compuesto de ant1mat3riÄ");
+		}
+		if (0 <= imcCalculado) {
+			imprimir(nombre + ", usted sufre de Insuficiencia Corporal");
+		}
+	}
+
+	if (18.5 <= imcCalculado) {
+		if (25 > imcCalculado) {
+			imprimir(nombre + ", usted se encuentra en los márgenes normales");
+		}
+	}
+
+	if (25 <= imcCalculado) {
+		if (30 > imcCalculado) {
+			imprimir(nombre + ", usted sufre de sobrepeso");
+		}
+	}
+
+	if (30 <= imcCalculado) {
+		imprimir(nombre + ", usted sufre de obesidad");
+	}
+
+	if (Infinity == imcCalculado) {
+		imprimir("<h1>" + nombre + ", usted es un agujero negro</h1>");
+	}
+	
+</script>

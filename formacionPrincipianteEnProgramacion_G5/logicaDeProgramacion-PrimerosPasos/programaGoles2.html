@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1><big>PROGRAMA Fútbol</big></h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	var victorias = parseInt(prompt("Informe la cantidad de victorias"));
+	var empates = parseInt(prompt("Informe la cantidad de empates"));
+	var puntosPasados = parseInt(prompt("Informe la cantidad de puntos del año pasado"));
+
+	var puntosTotales = victorias * 3 + empates
+
+	saltoLinea();
+	imprimir("El total de puntos del equipo es: " + puntosTotales);
+
+	if (puntosPasados > puntosTotales) {
+		imprimir("El equipo ha empeorado");
+	}
+
+	if (puntosPasados == puntosTotales) {
+		imprimir("El equipo está igual que el año pasado");
+	}
+
+	if (puntosPasados < puntosTotales) {
+		imprimir("El equipo ha mejorado");
+	}
+	
+</script>

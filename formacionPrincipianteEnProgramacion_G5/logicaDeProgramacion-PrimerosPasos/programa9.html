@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<h1><big>PROGRAMA9</big></h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function calcularIMC(peso, altur) {
+
+		return(peso / (altur*altur));
+
+	}
+
+	saltoLinea();
+
+	imprimir("El promedio del IMC calculado de Christian y Felipe es: " + (calcularIMC(71, 1.72) + calcularIMC(75, 1.73)) / 2);
+
+	saltoLinea();
+
+	imprimir("El promedio del IMC calculado de Karla y Vilma es: " + (calcularIMC(65, 1.68) + calcularIMC(55, 1.60)) / 2);
+
+</script>

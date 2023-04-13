@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1>Número par del 1 al 100</h1>
+<br>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br>");
+		document.write("<br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	var numeroPar = 2
+
+	imprimir("WHILE Número Par");
+
+	while (numeroPar <= 100) {
+
+		imprimir(numeroPar);
+		numeroPar = numeroPar + 2;
+
+	}
+
+	imprimir("FIN")
+
+</script>

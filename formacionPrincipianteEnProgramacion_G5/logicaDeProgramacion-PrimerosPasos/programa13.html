@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+
+<body>
+
+<h1>Juego de adivinanzas 2</h1>
+
+<input />
+<button >Verificar si acertó el número</button>
+
+</body>
+
+<script>
+	function numeroRandomico () {
+
+		var nRandomico = Math.round(Math.random() * 10);
+
+		if (nRandomico >= 1 && nRandomico <= 10) {
+
+			return nRandomico;
+
+		} else {
+
+			nRandomico = 1;
+			return nRandomico;
+
+		}
+	}
+
+	var userInput = document.querySelector("input");
+		userInput.focus();
+
+	function verificar() {
+
+		var numeroSecreto = numeroRandomico();
+
+		if (numeroSecreto == userInput.value) {
+			alert("Usted a acertado 👏🏻👏🏻👏🏻");
+		}
+		else {
+			alert("Usted a fallado, el numero era " + numeroSecreto + ". Vuelva a intentar");
+		}
+
+		userInput.value = "";
+		userInput.focus();
+
+	}
+
+	var button = document.querySelector("button");
+
+	button.onclick = verificar;
+
+</script>

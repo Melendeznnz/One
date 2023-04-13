@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<h1><big>Juego adivinación</big></h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function filaFull (ffull) {
+
+		for (contadorFila = 0; contadorFila < ffull; contadorFila++) {
+			document.write("*")
+		}
+
+		document.write("<br>")
+
+	}
+
+	function columnaFull (cfull) {
+
+		document.write("*")
+		for (contadorColumna = 0; contadorColumna < (cfull - 2); contadorColumna++) {
+			document.write(". ")
+		}
+
+		document.write("*<br>")
+
+	}
+
+	var fila = 10;
+	var columna = 10;
+
+	for (var contador = 0; contador < 10; contador++) {
+
+		if (contador == 0) {
+
+			filaFull(fila);
+
+		};
+
+		if (contador > 0) {
+
+			if(contador < (columna-1)) {
+
+				columnaFull(columna);
+
+			};
+
+		};
+
+		if (contador == columna - 1) {
+
+			filaFull(fila);
+
+		};
+	}
+	//
+
+	imprimir("FIN");
+
+</script>

@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+
+<h1>estrallas cuadradas</h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function filaFull (ffull) {
+
+		for (contadorFila = 0; contadorFila < ffull; contadorFila++) {
+			document.write("..*")
+		}
+
+		document.write("<br>")
+
+	}
+
+	function columnaFull (cfull, ffull) {
+
+		for (contadorFila = 0; contadorFila < cfull; contadorFila++) {
+			document.write("..*")
+		}
+
+		document.write("<br>")
+
+	}
+
+	var fila = Math.round((Math.random()) * 10 + 2);
+	var columna = Math.round((Math.random()) * 10 + 2);
+
+	filaFull(fila);
+
+	for (var contador = 0; contador < 10; contador++) {
+
+		if (contador > 0) {
+
+			if(contador < (columna-1)) {
+
+				columnaFull(fila);
+
+			};
+
+		};
+
+	}
+
+	filaFull(fila);
+
+	imprimir("FIN");
+
+</script>

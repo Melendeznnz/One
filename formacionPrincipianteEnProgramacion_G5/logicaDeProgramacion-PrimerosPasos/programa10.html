@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1><big>PROGRAMA10</big></h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	function calcularIMC(peso, altura) {
+
+		return(peso / (altura*altura));
+
+	}
+
+	var nombre = prompt("Informe su nombre");
+	var pesoInformado = prompt("Informe su peso");
+	var alturaInformada = prompt("Informe su altura");
+
+	var imcCalculado = calcularIMC(pesoInformado, alturaInformada);
+
+	saltoLinea();
+	imprimir(nombre + ", su IMC calculado es: " + imcCalculado);
+
+</script>

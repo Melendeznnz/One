@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<h1>Juego adivinación</h1>
+
+<script>
+
+	function saltoLinea() {
+
+		document.write("<br><br><br>");
+
+	}
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltoLinea();
+
+	}
+
+	var numeroEsperado = parseInt((Math.random()) * 10 + "");
+	var numeroEntregado = 0;
+	var contador = 0;
+
+	while (contador < 3) {
+
+		contador++;
+		nuemroEntregado = parseInt(prompt("Adivine el número del 0 al 10"));
+
+		if (nuemroEntregado == numeroEsperado) {
+
+			alert("Usted acertó en el intento " + contador);
+			break;
+
+		} else {
+
+			if (nuemroEntregado < numeroEsperado) {
+
+				alert("Era un número más grande");
+
+			} else {
+
+				alert("Era un número más pequeño");
+
+			}
+		}
+	}
+
+	if (nuemroEntregado == numeroEsperado) {
+		imprimir("Usted gano, el número era " + numeroEsperado);
+	} else {
+		imprimir("Usted perdio, el número era " + numeroEsperado);
+	}
+
+	imprimir("FIN");
+
+</script>

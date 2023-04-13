@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+
+<body>
+
+<h1>Juego de adivinanzas 2.1.1</h1>
+
+<input />
+<button >Verificar si acertó el número</button>
+
+</body>
+
+<script>
+
+	var userInput = document.querySelector("input");
+		userInput.focus();
+
+	function aleatorio() {
+		return Math.round((Math.random()*9)+1);
+	}
+
+	function sortearNumeros(cantidad) {
+
+		if(cantidad > 0 && cantidad < 9) {
+			var secreto = [];
+			var contador = 1;
+
+			while(contador <= cantidad) {
+
+				var numeroSecreto = aleatorio();
+				var repetido = false;
+				console.log(numeroSecreto);
+
+				for(var posicion = 0; posicion < secreto.length; posicion++) {
+					if(secreto[posicion] == numeroSecreto) {
+						repetido = true;
+						break;
+					}
+				}
+				if(repetido == false) {
+					secreto.push(numeroSecreto);
+					contador++;
+				}
+
+			}
+			return secreto
+		} else {
+			console.log("error: sobrecarga en sortearNumeros");
+			return [1];
+		}
+	}
+
+	function verificar() {
+
+		var numeroSecreto = sortearNumeros(6);
+		var correcto = false;
+
+		for (var posicion = 0; posicion < numeroSecreto.length; posicion++) {
+			correcto = (userInput.value == numeroSecreto [posicion])
+			if (correcto == true) {
+				break;
+			}
+		}
+
+		if (correcto) {
+			alert("Usted a acertado 👏🏻👏🏻👏🏻");
+		} else {
+			if (!(userInput.value == "")) {
+			alert("Usted a fallado, vuelva a intentar");
+			}
+		}
+
+		userInput.value = "";
+		userInput.focus();
+		console.log(numeroSecreto);
+
+	}
+
+	var button = document.querySelector("button");
+	button.onclick = verificar;
+
+</script>
