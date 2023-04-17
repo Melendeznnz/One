@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<canvas width="1920" height="1152"></canvas>
+
+<script>
+
+	const screen = document.querySelector("canvas");
+	const brush = screen.getContext("2d");
+
+	function rellenadorPixel(pixeles, posicion) {
+//144
+		let contador = 0
+		while (contador < pixeles.length) {
+			if (pixeles[contador] == 1) {
+				brush.fillStyle = "green";	//Propiedad
+				brush.fillRect(144*(contador), 144*(posicion - 1), 144, 144);	//Función
+			} else {
+
+				brush.fillStyle = "black";	//Propiedad
+				brush.fillRect(144*(contador), 144*(posicion - 1), 144, 144);	//Solo función
+			}
+			contador++
+		}
+	}
+	var pixeles = [1,1,1,1,1,1,1,1];
+	rellenadorPixel(pixeles, 1);
+	pixeles = [1,1,1,1,1,1,1,1];
+	rellenadorPixel(pixeles, 2);
+	pixeles = [1,0,0,1,1,0,0,1];
+	rellenadorPixel(pixeles, 3);
+	pixeles = [1,0,0,1,1,0,0,1];
+	rellenadorPixel(pixeles, 4);
+	pixeles = [1,1,1,0,0,1,1,1];
+	rellenadorPixel(pixeles, 5);
+	pixeles = [1,1,0,0,0,0,1,1];
+	rellenadorPixel(pixeles, 6);
+	pixeles = [1,1,0,0,0,0,1,1];
+	rellenadorPixel(pixeles, 7);
+	pixeles = [1,1,0,1,1,0,1,1];
+	rellenadorPixel(pixeles, 8);
+
+</script>

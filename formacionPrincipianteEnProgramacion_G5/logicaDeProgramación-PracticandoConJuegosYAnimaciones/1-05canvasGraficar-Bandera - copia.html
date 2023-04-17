@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<canvas width="1920" height="1152"></canvas>
+
+<script>
+
+	const screen = document.querySelector("canvas");
+	const brush = screen.getContext("2d");
+
+	brush.fillStyle = "blue";	//Propiedad
+	brush.fillRect(0, 0, 1920, 1152/3)	//Función
+
+	/*brush.fillStyle = "blue";
+	brush.fillRect(0, 0, 1152/3, 1920)
+	*/
+
+	brush.fillStyle = "blue";
+	brush.fillRect(0, (1152/3)*2, 1920, 1152/3)
+
+	brush.fillStyle = "yellow";
+	brush.beginPath();
+	brush.arc(1920/2, 1152/2, 190, 0, 2 * 3.14);
+	brush.fill();
+
+	brush.fillStyle = "white";
+	brush.beginPath();
+	brush.arc(1920/2, 1152/2, 160, 0, 2 * 3.14);
+	brush.fill();
+
+	brush.fillStyle = "yellow";
+	brush.beginPath();
+	brush.moveTo(1920/2, 450)
+	brush.lineTo((1920/3)+((1920/3)/30)*10,(1152/3)+((1152/3)/30)*20)
+	brush.lineTo((1920/3)+((1920/3)/30)*20,(1152/3)+((1152/3)/30)*20)//revizar a pitagoras para continuar
+	brush.fill();
+
+	brush.fillStyle = "white";
+	brush.beginPath();
+	brush.moveTo(960, 460)
+	brush.lineTo(863.3,635)
+	brush.lineTo(1056.6,635)//revizar a pitagoras para continuar
+	brush.fill();
+
+</script>

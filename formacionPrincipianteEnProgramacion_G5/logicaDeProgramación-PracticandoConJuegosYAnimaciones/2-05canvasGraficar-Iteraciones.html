@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<canvas width="1920" height="1152"></canvas>
+
+<script>
+
+	var screen = document.querySelector("canvas");
+	var brush = screen.getContext("2d");
+
+	function rellenadorCuadros(x, y, color) {
+//144
+		brush.fillStyle = color;
+		brush.fillRect(x, y, 144, 144);
+		brush.strokeStyle = "black";
+		brush.strokeRect(x, y, 144, 144)
+
+	}
+	
+	let contador = 0
+	while (contador <= 4) {
+		rellenadorCuadros(144*contador,0,"blue")
+		rellenadorCuadros(144*contador,144,"white")
+		rellenadorCuadros(144*contador,288,"blue")
+		contador++
+	}
+
+</script>
