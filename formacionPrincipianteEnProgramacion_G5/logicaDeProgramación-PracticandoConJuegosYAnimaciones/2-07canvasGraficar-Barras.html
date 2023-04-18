@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+
+<h1>Uso de navegadores</h1>
+<canvas width="1920" height="1152"></canvas>
+
+<script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+    function dibujarRectangulo(x, y, base, altura, color) {
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+
+    }
+
+    function escribirTexto(x, y, texto) {
+
+        pincel.fillStyle="black";
+        pincel.font="15px Georgia";
+        pincel.fillText(texto, x, y);
+
+    }
+
+    function dibujarGrafica(x, nomSeries, serie, colores) {
+        var acumulador = 20;
+
+        for (let contador = 0; contador < serie.length; contador ++) {
+
+            dibujarRectangulo(x, acumulador, 144, serie[contador]*5, colores[contador]);
+            escribirTexto(x+150, 5+acumulador+(serie[contador]*5)/2, nomSeries[contador]);
+            acumulador = acumulador + serie[contador]*5;
+
+        }
+    }
+
+    var nomSeries = ["Chrome", "Firefox", "Internet Explorer/Edge", "Safari", "Otros"];
+    var serie2009 = [6, 47, 41, 3, 3];
+    var serie2019 = [81, 9, 3, 3, 4];
+    var colores = ["blue","green","yellow", "red","gray"];
+
+    escribirTexto(0, 10, "Anho 2009");
+    dibujarGrafica(0, nomSeries, serie2009, colores);
+
+    escribirTexto(432, 10, "Anho 2019");
+    dibujarGrafica(432, nomSeries, serie2019, colores);
+
+
+    
+</script>
