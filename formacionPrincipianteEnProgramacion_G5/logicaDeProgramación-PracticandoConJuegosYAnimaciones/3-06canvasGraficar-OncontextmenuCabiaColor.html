@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<h1>Uso de navegadores</h1>
+<canvas width="1920" height="1152"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var color = ["blue", "red", "green"];
+    var cont = 0
+
+    function dibujarCuadrado(evento) {
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+
+        pincel.fillStyle = color[cont];
+        pincel.fillRect(x, y, 50, 50);
+        console.log("X: " + x + " & Y: " + y);
+
+    }
+
+    function cambiarColor(evento) {
+
+        cont++;
+        if(cont > 2) {
+            cont = 0;
+        }
+
+        alert("Funciono");
+        return false
+
+
+    }
+
+    pantalla.oncontextmenu = cambiarColor;
+    pantalla.onclick = dibujarCuadrado;
+    
+</script>

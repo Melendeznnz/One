@@ -1,0 +1,64 @@
+<canvas width="1900" height="950"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    
+    //Se trato de hacer una animación de rebote con aceleración y desaceleración en base a lo aprendido en la clase precente y las anteriores y conceptos de cinemática de bachillerato, en el resultado final se persive una realentizacion en el desplasamiento a mayores "FPS", se supone que se debe a la velocidad con la que se procesan los comandos que actualizan la imagen.
+    var gravedad = 1078; //9.8m/s
+    var velocidad0 = 844;
+    var velocidad = velocidad0;
+    var fps = 60;    //fps 30/60*/120
+    var fluides = Math.round(1000/fps);
+
+    var x = 1920/2;
+    var y0 = 950/2;
+    var y = y0;
+    
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    pincel.arc(x, y, 36, 0, 2 * 3.14);
+    pincel.fill();
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(x-72, y0+36, 144, 36);
+
+    function pelota() {
+        //console.log("velocidad = " + velocidad + " y 'y' = " + y);    //Solo se uso para hacer debugging
+
+        if (y>y0) {
+            y = y0;
+            velocidad = velocidad0;
+        }
+        pincel.clearRect(0, 0, 1920, 1152);
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(x-72, y0+36, 144, 36);
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, 36, 0, 2 * 3.14);
+        pincel.fill();
+        y = y - (velocidad/fps);
+        velocidad = velocidad - (gravedad/fps);
+
+    }
+
+    var contador = 2
+
+    function cambiarFPS() {
+
+        var fpses = [15, 30, 60, 120]
+        contador++
+        if (contador > 3) {
+            contador = 0
+        }
+        fps = fpses[contador];
+        fluides = Math.round(1000/fps);
+
+        return false
+
+    }
+
+    pantalla.oncontextmenu = cambiarFPS;
+    setInterval(pelota, fluides);
+
+
+</script>
