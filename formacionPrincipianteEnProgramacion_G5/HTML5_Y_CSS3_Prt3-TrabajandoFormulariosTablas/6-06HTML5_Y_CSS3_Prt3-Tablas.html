@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <title>Productos - Barbería Alura</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="proyecto_BarberiaAlura/reset.css">
+        <style>
+            header{
+                background-color: #BBBBBB;
+                padding: 20px 0;
+            }
+
+            .caja{
+                width: 940px;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            nav{
+                position: absolute;
+                top: 110px;
+                right: 0;
+            }
+
+            nav li{
+                display: inline;
+                margin: 0 0 0 15px;
+            }
+
+            nav a{
+                text-transform: uppercase;
+                color: #000000;
+                font-weight: bold;
+                font-size: 22px;
+                text-decoration: none;
+            }
+
+            nav a:hover{
+                color: #C78C19;
+                text-decoration: underline;
+            }
+
+            .productos{
+                width: 940px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+
+            .productos li{
+                display: inline-block;
+                text-align: center;
+                width: 30%;
+                /**/vertical-align: top;
+                margin: 0 1.5%;
+                padding: 30px 20px;
+                box-sizing: border-box;
+                border: 3px solid #000000;
+                border-radius: 20px;
+            }
+
+            .productos li:hover{
+                border: 4px solid #C78C19;
+            }
+
+            .productos li:active{
+                border: 3px solid #088C19;
+            }
+
+            .productos h2{
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .productos li:hover h2{
+                color: #C78C19;
+                font-size: 33px;
+            }
+
+            .productoDescripcion{
+                font-size: 18px;
+            }
+
+            .productoPrecio{
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+
+            main{
+                width: 940px;
+                margin: 0 auto;
+            }
+
+            form{
+                margin: 40px 0;
+            }
+
+            form label, form legend{
+                display: block;
+                font-size: 20px;
+                margin: 0 0 10px;
+            }
+
+            .input-padron{
+                display: block;
+                margin: 0 0 20px;
+                padding: 10px 25px;
+                width: 50%;
+            }
+
+            .checkbox{
+                margin: 20px 0;
+            }
+
+            .enviar{
+                width: 40%;
+                padding: 15px 0;
+                font-size: 18px;
+                font-weight: bold;
+                color: #FFFFFF;
+                background: orange;
+                border-radius: 10px;
+                transition: 0.5s all;
+                cursor: pointer;
+            }
+
+            .enviar:hover{
+                background: red;
+                transform: scale(1.1);
+            }
+
+            table{
+                margin: 40px 40px;
+            }
+
+            thead{
+                background: #555555;
+                color: white;
+                font-weight: bold;
+            }
+
+            td, th{
+                border: 1px solid black;
+                padding: 8px 15px;
+            }
+
+            footer{
+                text-align: center;
+                background: url(proyecto_BarberiaAlura/img/bg.jpg);
+                padding: 40px;
+            }
+
+            .copyright{
+                color: #FFFFFF;
+                font-size: 13px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="caja">
+                <h1><a href="0-00HTML5_Y_CSS3_Prt3-home.html"><img src="proyecto_BarberiaAlura/img/logo.png" alt="logo de la página Alura"></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="0-00HTML5_Y_CSS3_Prt3-home.html">Home</a></li>
+                        <li><a href="0-01HTML5_Y_CSS3_Prt3-Productos.html">Productos</a></li>
+                        <li><a href="4-06HTML5_Y_CSS3_Prt3-InputRequiredLegendhtml.html">Contactos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <form>
+                <label for="nombreyapellido">Nombre Y Apellido</label>
+                <input type="text" id="nombreyapellido" class="input-padron" required>
+                
+                <label for="correo">Correo electronico</label>
+                <input type="email" id="correo" class="input-padron" required placeholder="Nombre@email.com">
+                
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" class="input-padron" required placeholder="(XXX) XXXX XXXX">
+                
+                <label for="mensaje">mensaje</label>
+                <textarea id="mensaje" cols="70" rows="10" class="input-padron" required></textarea>
+
+                <fieldset>
+                    <legend>¿Cómo quisiera que le contactemos?</legend>
+
+                    <label for="radioEmail"><input type="radio" name="contactos" id="radioEmail" required>Email</label>
+
+                    <label for="radioTelefono"><input type="radio" name="contactos" id="radioTelefono" required>Telefono</label>
+
+                    <label for="radioWhatsApp"><input type="radio" name="contactos" id="radioWhatsApp" required checked>Email</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>¿En qué horario quisiera ser atendido?</legend>
+                    <select >
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                        <option>Noche</option>
+                    </select>
+                </fieldset>
+
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaria recibir novedades de La Barberia Alura?</label>
+
+                <input class="enviar" type="submit" value="Enviar formulario" id="enviar">
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                </tr>
+                </thead>                
+                <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>08h - 20h</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>08h - 20h</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>08h - 20h</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </main>
+        <footer>
+            <img src="proyecto_BarberiaAlura/img/logo-blanco.png" alt="logo de la página Alura">
+            <p class="copyright">&copy; Copyright Barbería Alura - 2023</p>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <title>Productos - Barbería Alura</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="proyecto_BarberiaAlura/reset.css">
+        <style>
+            header{
+                background-color: #BBBBBB;
+                padding: 20px 0;
+            }
+
+            .caja{
+                width: 940px;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            nav{
+                position: absolute;
+                top: 110px;
+                right: 0;
+            }
+
+            nav li{
+                display: inline;
+                margin: 0 0 0 15px;
+            }
+
+            nav a{
+                text-transform: uppercase;
+                color: #000000;
+                font-weight: bold;
+                font-size: 22px;
+                text-decoration: none;
+            }
+
+            nav a:hover{
+                color: #C78C19;
+                text-decoration: underline;
+            }
+
+            .productos{
+                width: 940px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+
+            .productos li{
+                display: inline-block;
+                text-align: center;
+                width: 30%;
+                /**/vertical-align: top;
+                margin: 0 1.5%;
+                padding: 30px 20px;
+                box-sizing: border-box;
+                border: 3px solid #000000;
+                border-radius: 20px;
+            }
+
+            .productos li:hover{
+                border: 4px solid #C78C19;
+            }
+
+            .productos li:active{
+                border: 3px solid #088C19;
+            }
+
+            .productos h2{
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .productos li:hover h2{
+                color: #C78C19;
+                font-size: 33px;
+            }
+
+            .productoDescripcion{
+                font-size: 18px;
+            }
+
+            .productoPrecio{
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+
+            footer{
+                text-align: center;
+                background: url(proyecto_BarberiaAlura/img/bg.jpg);
+                padding: 40px;
+            }
+
+            .copyright{
+                color: #FFFFFF;
+                font-size: 13px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="caja">
+                <h1><a href="0-00HTML5_Y_CSS3_Prt3-home.html"><img src="proyecto_BarberiaAlura/img/logo.png"></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="0-00HTML5_Y_CSS3_Prt3-home.html">Home</a></li>
+                        <li><a href="0-01HTML5_Y_CSS3_Prt3-Productos.html">Productos</a></li>
+                        <li><a href="1-04HTML5_Y_CSS3_Prt3-ContactosForm_Y_Style.html">Contactos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <ul class="productos">
+                <li>
+                    <h2>Cabello</h2>
+                    <img src="proyecto_BarberiaAlura/img/cabello.jpg">
+                    <p class="productoDescripcion">Con tijera o máquina, a gusto del cliente</p>
+                    <p class="productoPrecio">$ 10</p>
+                </li>
+                <li>
+                    <h2>Barba</h2>
+                    <img src="proyecto_BarberiaAlura/img/barba.jpg">
+                    <p class="productoDescripcion">Corte y diseño profesional de barba</p>
+                    <p class="productoPrecio">$ 8</p>
+                </li>
+                <li>
+                    <h2>Cabello + Barba</h2>
+                    <img src="proyecto_BarberiaAlura/img/cabello+barba.jpg">
+                    <p class="productoDescripcion">Paquete completo de cabello y barba</p>
+                    <p class="productoPrecio">$ 15</p>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <img src="proyecto_BarberiaAlura/img/logo-blanco.png">
+            <p class="copyright">&copy; Copyright Barbería Alura - 2023</p>
+        </footer>
+    </body>
+
+</html>
